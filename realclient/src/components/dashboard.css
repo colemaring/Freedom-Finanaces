@@ -1,0 +1,85 @@
+/* General Styles */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Assuming a dark theme for better contrast */
+    color: #FFFFFF;
+}
+
+/* Financial Summary */
+.financial-summary {
+    position: absolute;
+    width: 217px;
+    height: 19px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+/* Welcome back, Cole! */
+.welcome-text {
+    position: absolute;
+    width: 536px;
+    height: 124px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+    position: absolute;
+    width: 268px;
+    height: 100px;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 63px;
+    color: #FFFFFF;
+}
+
+/* Rectangle 2 (Button) */
+.button-rectangle {
+    position: absolute;
+    width: 186px;
+    height: 48px;
+    background: #5D74F1;
+    border-radius: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-rectangle.outline {
+    box-sizing: border-box;
+    border: 1px solid #FFFFFF;
+}
+
+/* Add Bank Account Button */
+.add-bank-account {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+/* Another Button */
+.another-button {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+/* Content Container */
+.content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+    width: 722px;
+    height: 356px;
+}

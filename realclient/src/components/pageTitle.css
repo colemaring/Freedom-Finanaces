@@ -1,0 +1,18 @@
+
+
+
+.dash {
+    font-size: 28px;
+    color: white;
+}
+
+.pagetitle {
+    margin-bottom: 10px;
+}
+
+.pagetitle h1 {
+    font-size: 50px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: white;
+}
