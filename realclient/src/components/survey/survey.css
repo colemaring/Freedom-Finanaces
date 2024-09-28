@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.quiz-container {
+  width: 100%;
+  max-width: 600px; /* Maximum width of the quiz */
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.question-container {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition for slide effect */
+}
+
+.question-box {
+  min-width: 100%; /* Each question takes the full width */
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #F4F4F4; /* Darker box for questions */
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.question {
+  margin-bottom: 20px;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.answer-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: white; /* Darker input field */
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.answer-input:focus {
+  outline: none;
+  background-color: white; /* Lighter on focus */
+}
+
+.next-button {
+  padding: 10px 20px;
+  background-color: #5d74f1; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.next-button:hover {
+  background-color: #4a63d1; /* Slightly darker on hover */
+}
+.quiz-container{
+  overflow-x: auto;
+
+  width:100%;
+}
+

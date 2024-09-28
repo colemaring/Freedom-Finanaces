@@ -13,11 +13,17 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "boxicons": "^2.1.4",
+    "chart.js": "^4.4.4",
     "echarts": "^5.5.1",
+    "openai": "^4.65.0",
     "react": "^18.3.1",
     "react-apexcharts": "^1.4.1",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
-    "remixicon": "^4.3.0"
+    "react-plaid-link": "^3.6.0",
+    "react-router-dom": "^6.26.2",
+    "remixicon": "^4.3.0",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

@@ -1,0 +1,32 @@
+.add {
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6.75px 13.5px;
+    width: 185px;
+    height: 43px;
+    background: #5D74F1;
+    box-shadow: -1.5px 1.5px 2.25px rgba(93, 116, 241, 0.06), 
+                1.5px 1.5px 2.25px rgba(93, 116, 241, 0.06);
+    border-radius: 3px;
+  }
+
+  .add:hover {
+    animation: bubble 0.4s ease-out;
+    background-color: #405bf3; /* Darkens the button on hover */
+    cursor: pointer; 
+  }
+  
+  @keyframes bubble {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

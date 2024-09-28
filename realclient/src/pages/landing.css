@@ -1,0 +1,89 @@
+.landing-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #252B42;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.text-content {
+  max-width: 600px; /* Limit text width on large screens */
+  width: 100%; /* Full width for smaller screens */
+  color: white; /* Text color */
+  margin: 0 auto; /* Center the text content horizontally */
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Stack items vertically */
+  text-align: left;align-items: flex-start; /* Align items to the left */
+  justify-content: center; /* Center items vertically */
+  text-align: left; /* Align text to the left */
+  padding: 50px 0; /* Add padding for vertical spacing */
+}
+
+.start-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #5D74F1; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #252B42; /* Hover effect */
+}
+
+.image-content {
+  flex: 1; /* Allow image content to take available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width for smaller screens */
+  margin-top: 20px; /* Space between text and image */
+}
+
+.image-content img {
+  max-width: 100%; /* Responsive image */
+  height: auto;
+  object-fit: contain; /* Make sure the image scales properly */
+}
+
+/* Media Queries for Different Screen Sizes */
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+  .landing-container {
+    flex-direction: column; /* Stack text and image vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 1rem;
+  }
+
+  .text-content {
+    text-align: left; /* Align the text to the left */
+    padding: 20px 0; /* Adjust padding for smaller screens */
+  }
+
+  .image-content {
+    margin-top: 30px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .text-content {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .start-button {
+    padding: 0.5rem 1rem;
+  }
+
+  .image-content img {
+    max-width: 90%; /* Slightly smaller image for mobile */
+  }
+}
+
