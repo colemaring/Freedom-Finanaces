@@ -1,4 +1,4 @@
-_# Freedom Finances
+# Freedom Finances
 2024 ShellHacks Hackathon Project <br>
 <br>
 Deployment: <br>
