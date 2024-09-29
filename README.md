@@ -22,4 +22,4 @@ Technical Description: <br>
 A React and Express web-app utilizing the Plaid API to connect your bank account and OpenAI's GPT 3.5 turbo to generate personalized financial suggestions based on your transaction history and liabilities. Click on one of the AI generated suggestions to visuzlie your debt payment if you were to follow the suggestion's advice. <br>
 <br>
 Domain Registration  <br>
-eventually @ freedomfinance.xyz <br>
+eventually @ freedomfinances.xyz <br>
