@@ -1,7 +1,16 @@
 # Debt-Management-App
-ShellHacks 2024 Project
-Authors: Gabrielle Pariag, Colton Maring, Peter-Karl Jackson, Pranavsai Gandikota
-
-https://www.youtube.com/watch?v=0kxlwAFJ_RA
-https://github.com/user-attachments/assets/d7b6c10b-53f9-4f46-a5a8-40a902933713
-
+ShellHacks 2024 Project <br>
+<br>
+Deployment: <br>
+git clone https://github.com/colemaring/Freedom-Finanaces.git <br>
+cd Freedom-Finanaces/realclient && npm i && npm run dev <br>
+cd Freedom-Finanaces/server && npm i && npm start <br>
+<br>
+Demo Video: <br>
+https://www.youtube.com/watch?v=0kxlwAFJ_RA <br>
+<br>
+Devpost Submission:  <br>
+https://devpost.com/software/freedom-finances  <br>
+<br>
+Domain Registration  <br>
+eventually @ freedomfinance.xyz <br>
