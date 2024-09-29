@@ -12,7 +12,15 @@
     background: #f4f4f4;
     border-radius: 9px;
 
-    box-sizing: border-box;
+    box-sizing: border-box; 
+
+    /* Stuff For Glass */
+    background: linear-gradient(135deg, rgb(255, 255, 255), rgba(219, 228, 255, 0.804));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(255, 227, 227, 0.37);
+
 }
 
 .buttonStyle {
@@ -24,12 +32,14 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
+    
   }
 
   .buttonStyle:hover {
     background-color: #efefef;
     color: #000000;
     animation: bubble 0.4s ease-out;
+    
   }
 
 .h1 {
@@ -51,11 +61,15 @@
     border-radius: 6.75px;
     text-align: center;
     box-sizing: border-box;
+    overflow-y: auto;
+    max-height: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 8px;
+
+    
 }
 
 .details {

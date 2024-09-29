@@ -57,7 +57,7 @@ const Stats = ({ token }) => {
   }, []);
 
   const openai = new OpenAI({
-    apiKey: "key",
+    apiKey: "openaiapikey",
     dangerouslyAllowBrowser: true,
   });
 
@@ -156,6 +156,7 @@ const Stats = ({ token }) => {
         height: "100%",
         margin: "1rem",
         marginTop: "0",
+        fontWeight: "700px", // me
         display: "flex",
         textAlign: "center",
         justifyContent: "space-between", // Optional: Adjusts spacing between items
@@ -164,20 +165,20 @@ const Stats = ({ token }) => {
       }}
     >
       <div>
-        <h4>This Month's Spending</h4>
-        <p style={{ fontWeight: "600" }}>${monthlyAvg}</p>
+        <h4 style={{ fontWeight: "400" }}>This Month's Spending</h4>
+        <p style={{ fontWeight: "700", fontSize: 30 }}>${monthlyAvg}</p>
       </div>
 
       <div>
-        <h4>Loan Amount</h4>
-        <p style={{ fontWeight: "600" }}>
+        <h4 style={{ fontWeight: "400" }}>Loan Amount</h4>
+        <p style={{ fontWeight: "700", fontSize: 30 }}>
           ${Number(totalDebt).toLocaleString()}
         </p>
       </div>
 
       <div>
-        <h4>Top Spending Category</h4>
-        <p style={{ fontWeight: "600" }}>{topCategory}</p>
+        <h4 style={{ fontWeight: "400" }}>Top Spending Category</h4>
+        <p style={{ fontWeight: "700", fontSize: 30 }}>{topCategory}</p>
       </div>
     </div>
   );

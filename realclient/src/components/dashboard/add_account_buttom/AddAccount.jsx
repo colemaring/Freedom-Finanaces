@@ -10,16 +10,9 @@ function OtherButton() {
   };
 
   return (
-    <div className="button-container">
-      <button
-        style={{ marginLeft: "20rem" }}
-        type="button"
-        className="add hvr-sweep-to-right"
-        onClick={handleClick}
-      >
-        Transactions
-      </button>
-    </div>
+    <button type="button" className="add transactions" onClick={handleClick}>
+      Transactions
+    </button>
   );
 }
 

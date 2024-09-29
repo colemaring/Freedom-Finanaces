@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Chart from "chart.js/auto";
 import LineChart from "./LineChart";
+import Tooltip2 from "../tool_tip/Tooltip";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -23,6 +24,9 @@ function Graph({ handleState, sum }) {
     Tooltip,
     Legend
   );
+
+  const tip =
+    "Interested in seeing how our suggestions can help? Select one, two, or three and watch as your debt projection changes.";
 
   const storedData = JSON.parse(localStorage.getItem("surveyData"));
   const endDate = new Date(storedData.goal_date);
@@ -72,7 +76,7 @@ function Graph({ handleState, sum }) {
     labels,
     datasets: [
       {
-        label: "Debt Payoff Progress",
+        label: "Current Rate of Payoff",
         data: values,
         fill: false,
         borderColor: "rgba(93, 116, 241, 1)",
@@ -81,10 +85,10 @@ function Graph({ handleState, sum }) {
       },
 
       {
-        label: "Debt Payoff Progress (Increased)",
+        label: "Rate of Payoff With Applied Suggestions",
         data: values2,
         fill: false,
-        borderColor: "rgba(54, 162, 235, 1)",
+        borderColor: "rgba(27, 153, 0, 0.8)",
         borderWidth: 4,
         tension: 0.1,
       },
@@ -93,6 +97,7 @@ function Graph({ handleState, sum }) {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top",
@@ -104,6 +109,8 @@ function Graph({ handleState, sum }) {
     type: "line",
     data: data,
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       transitions: {
         show: {
           animations: {
@@ -129,7 +136,21 @@ function Graph({ handleState, sum }) {
 
   return (
     <div className="card">
-      <h2>Debt Projection</h2>
+      <div
+        className="header_graph"
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <h2 style={{ marginRight: "8px" }}>
+          Debt Projection
+          {"   "}
+          <span style={{ marginLeft: "auto", fontSize: 16, fontWeight: 300 }}>
+            <Tooltip2 id="tip" tip={tip} style={{ marginLeft: "auto" }} />
+          </span>
+        </h2>
+      </div>
       <div style={{ width: "100%", height: "100%" }}>
         <Line data={data} options={config} />
       </div>

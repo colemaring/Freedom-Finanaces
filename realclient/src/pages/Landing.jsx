@@ -21,36 +21,28 @@ const Landing = () => {
           >
             <Typewriter
               options={{
-                delay: 4, // Speed of typing (lower means faster)
+                delay: 5, // Speed of typing (lower means faster)
               }}
               onInit={(typewriter) => {
                 typewriter
+                  .typeString(
+                    "<span style='font-size:50px'>Freedom</span> <span style='color: #5D74F1; font-size:50px'>Finances</span>"
+                  )
+                  .pauseFor(3000)
+                  .deleteAll()
                   .typeString("The Easier ")
                   .typeString("<span style='color: #5D74F1;'>Solution</span>")
                   .typeString(" to Manage Your ")
                   .typeString("<span style='color: #5D74F1;'>Debt</span>")
                   .typeString(".")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .pauseFor(500) // Short pause before typing the next string
-                  .typeString("Click below to begin!")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .pauseFor(500) // Short pause before typing the next string
-                  .typeString("The Easier ")
-                  .typeString("<span style='color: #5D74F1;'>Solution</span>")
-                  .typeString(" to Manage Your ")
-                  .typeString("<span style='color: #5D74F1;'>Debt</span>")
-                  .typeString(".")
-                  .pauseFor(10000)
+                  .pauseFor(100000)
                   .start();
               }}
             />
           </div>
 
           <p className="description-text">
-            Discover new ways to manage your debt, connect with other motivated
-            individuals, and achieve your financial goals.
+            An educational platform introducing new ways to manage your debt and achieve financial freedom. Powered by AI.
           </p>
           <button className="start-button" onClick={handleStartClick}>
             Start Now

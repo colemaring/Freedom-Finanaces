@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import SuggestionsCard from "./SuggestionsCard";
 import "./suggestions.css";
 import OpenAI from "openai";
+import Tooltip from "../tool_tip/Tooltip";
 import image from "../../assets/images/sparkles.png";
+import { FaFontAwesome } from "react-icons/fa";
 
 const Suggestions = ({ handleState, setSum, sum }) => {
   const [suggestion1, setSuggestion1] = useState(null);
@@ -14,6 +16,9 @@ const Suggestions = ({ handleState, setSum, sum }) => {
 
   const [data, setData] = useState(null);
   const [chatResponse, setChatResponse] = useState("");
+
+  const tip =
+    "Personalized budgeting and debt reduction tips to help you find financial freedom. Powered by AI.";
 
   const getData = async () => {
     console.log("getData called");
@@ -41,7 +46,7 @@ const Suggestions = ({ handleState, setSum, sum }) => {
   }, []);
 
   const openai = new OpenAI({
-    apiKey: "key",
+    apiKey: "openaiapikey",
     dangerouslyAllowBrowser: true,
   });
 
@@ -61,7 +66,7 @@ const Suggestions = ({ handleState, setSum, sum }) => {
 2. Give a recommendation to cut down on one of the spending categories, and how much to cut down by. be reasonable with your suggestions. your responses should be in the same order as the cirteria.
 3. Increase the amount you are paying of the loan/debt by
 
-format the responses as 1., 2. , 3.. Do not include any other text other then the 3 bullet points. Each bullet point should be two sentences
+format the responses as 1., 2. , 3.. Do not include any other text other then the 3 bullet points. Each bullet point should be two sentences, STRICT WORD COUNT OF 20.
 
 ${JSON.stringify(transactionData)}`,
           },
@@ -148,16 +153,25 @@ ${JSON.stringify(transactionData)}`,
 
   return (
     <div className="card">
-      <h2>
-        Select Personalized AI Suggestions to Reduce Your Debt
-        <img
-          src={image}
-          alt="AI"
-          width="20"
-          height="20"
-          style={{ display: "inline-block", marginLeft: "0.5rem" }}
-        />
-      </h2>
+      <div
+        className="header_suggestions"
+        style={{ display: "flex", alignItems: "center" }}
+      >
+        <h2 style={{ marginRight: "8px" }}>
+          Select Personalized AI Suggestions to Reduce Your Debt
+          <img
+            src={image}
+            alt="AI"
+            width="20"
+            height="20"
+            style={{ display: "inline-block", marginLeft: "0.5rem" }}
+          />
+          {"    "}
+          <span style={{ marginLeft: "auto", fontSize: 16, fontWeight: 300 }}>
+            <Tooltip id="tip" tip={tip} />
+          </span>
+        </h2>
+      </div>
       <div className="content-box">
         <div className="details">
           <SuggestionsCard

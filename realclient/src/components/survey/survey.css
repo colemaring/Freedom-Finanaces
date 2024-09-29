@@ -1,37 +1,35 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0; 
+}
+
+* {
+  box-sizing: border-box; /* Ensures padding doesn't affect width/height calculations */
 }
 
 .st {
   color: white;
-  padding: 20px;
+  padding-bottom: 10px;
   text-align: center;
 }
 
 .quiz-container {
   width: 100%;
   max-width: 600px;
-  padding: 30px;
+  padding: 0px;
   text-align: center;
   border-radius: 8px;
   overflow-x: auto;
-  width: 100%;
-
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255, 255, 255,0));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border:1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37) ;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
 }
 
 .question-container {
@@ -39,9 +37,11 @@ body {
   display: flex;
   transition: transform 0.5s ease;
 }
-#root{
+
+#root {
   align-items: center;
 }
+
 .question-box {
   min-width: 100%;
   padding: 20px;
@@ -64,18 +64,17 @@ body {
   border: none;
   border-radius: 5px;
   background-color: white;
-  color: black; 
-  /*transition: background-color 0.3s;
+  color: black;
 }
 
 .answer-input:focus {
   outline: none;
-  background-color: white; /* Slightly lighter on focus */
+  background-color: white;
 }
 
 .next-button {
-  width: 25%;
-  padding: 9px;
+  width: 40%;
+  padding: 10px;
   background-color: #5d74f1;
   color: white;
   border: none;
@@ -83,15 +82,15 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
   text-align: center;
-  margin-top: 1px;
-
+  
+  margin-bottom: 30px;
 }
 
 .next-button:hover {
   background-color: #6f44ff;
 }
 
-.input-admin{
+.input-admin {
   width: 100%; 
   padding: 15px; 
   border: none;
@@ -101,10 +100,22 @@ body {
   transition: background-color 0.3s;
   box-sizing: border-box; 
 }
-.glass{
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255, 255, 255,0));
+
+.allofsurvey{
+  margin-top: 15rem;
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border:1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37) ;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
+#particles canvas {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+

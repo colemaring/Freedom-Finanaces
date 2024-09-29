@@ -5,10 +5,23 @@ body {
     color: #FFFFFF;
 }
 
+html, #root {
+    height: 100%; /* Ensure html and #root take up full height */
+}
+
+@media (max-width: 1600px) {
+    body {
+        overflow-y: auto; /* Enable vertical scrollbar on smaller screens */
+        overflow-x: auto; /* Enable horizontal scrollbar on smaller screens */
+    }
+}
+
+
 .header {
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: row; /* Change to row to align items horizontally */
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center items vertically */
     gap: 1px;
     padding: 20px;
 }
@@ -45,12 +58,25 @@ body {
     transition: all 0.3s;
 }
 
-.button-container {
-    display: flex;           
-    align-items: left; 
-    width: 32%; 
+.button-container {    
+    display: flex;
+    justify-content: flex-end;
+    width: 50%; 
     padding-bottom: 15px;
+    margin-left: auto; 
+    /* position: static; */
 }
+
+.logout {
+    margin-left: 1rem;
+    border-radius: 15px;
+
+}
+
+.transaction {
+    margin-left: auto;
+}
+
 
 .content {
     display: flex;
@@ -64,7 +90,7 @@ body {
 
 .dashboard-container {
     margin: 30px;
-    padding: 60px;
+    padding: 35px;
     background-color: rgba(57, 75, 107, 0.589);
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);

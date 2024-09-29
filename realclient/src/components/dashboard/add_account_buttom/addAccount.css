@@ -1,15 +1,12 @@
 .add {
     color: white;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     padding: 6.75px 13.5px;
-    width: 185px;
+    width: 150px;
     height: 43px;
     background: #5D74F1;
-    box-shadow: -1.5px 1.5px 2.25px rgba(93, 116, 241, 0.06), 
-                1.5px 1.5px 2.25px rgba(93, 116, 241, 0.06);
-    border-radius: 3px;
+    border-radius: 5px;
+    border: 1px solid #5D74F1;
+    box-sizing: border-box;
   }
 
   .add:hover {

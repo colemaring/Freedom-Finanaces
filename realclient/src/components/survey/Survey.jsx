@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { usePlaidLink } from "react-plaid-link";
 import "./survey.css";
 import Typewriter from "typewriter-effect";
-
+//import ParticlesComponent from "./components/particles";
 const Survey = ({ openBankLink, isBankLinkReady }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [inputValue, setInputValue] = useState("");
@@ -55,40 +55,56 @@ const Survey = ({ openBankLink, isBankLinkReady }) => {
 
   return (
     <>
-      <div className="st">
-        <h1>Almost there... Just a few questions!</h1>
-      </div>
-      <div className="quiz-container">
-        <div className="question-box">
-          <h2 className="question">
-            {questions[currentQuestionIndex].question}
-          </h2>
-          <input
-            className="input-admin"
-            type={
-              questions[currentQuestionIndex].name === "goal_date"
-                ? "date"
-                : "text"
-            }
-            placeholder={
-              questions[currentQuestionIndex].name === "goal_date"
-                ? ""
-                : "Type here..."
-            }
-            name={questions[currentQuestionIndex].name}
-            value={inputValue}
-            onChange={handleChange}
-          />
+      <div className="allofsurvey">
+        {/* <ParticlesComponent id="particles" />{" "} */}
+        <div className="st">
+          <h2>Almost there... Just a few questions!</h2>
         </div>
+        <div className="quiz-container">
+          <div className="question-box">
+            <h2 className="question">
+              {questions[currentQuestionIndex].question}
+            </h2>
+            <input
+              className="input-admin"
+              type={
+                questions[currentQuestionIndex].name === "goal_date"
+                  ? "date"
+                  : "text"
+              }
+              placeholder={
+                questions[currentQuestionIndex].name === "goal_date"
+                  ? ""
+                  : "Type here..."
+              }
+              name={questions[currentQuestionIndex].name}
+              value={inputValue}
+              onChange={handleChange}
+            />
+          </div>
 
-        <button className="next-button" onClick={handleNext}>
-          {currentQuestionIndex < questions.length - 1
-            ? "Continue"
-            : "Connect to Bank"}
-        </button>
+          <button className="next-button" onClick={handleNext}>
+            {currentQuestionIndex < questions.length - 1
+              ? "Continue"
+              : "Connect to Bank"}
+          </button>
+        </div>
       </div>
     </>
   );
 };
+/* <body>
+      <div className="wrapper">
+        <span></span>
+        <span></span>
+        <span></span>
 
+        <span></span>
+      </div>
+      <div className = "banner">
+          <div class="content">
+            <h2>
+              </h2>
+      </div>
+</body> */
 export default Survey;

@@ -56,7 +56,7 @@ const Test = ({ token }) => {
   }, [token]);
 
   const openai = new OpenAI({
-    apiKey: "key",
+    apiKey: "openaiapikey",
     dangerouslyAllowBrowser: true,
   });
 

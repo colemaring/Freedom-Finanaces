@@ -69,7 +69,7 @@ const Login = ({ setToken, token, setName, setDate, date, name }) => {
   });
 
   return (
-    <div>
+    <div styles={{ marginTop: "3rem" }}>
       <Survey openBankLink={open} isBankLinkReady={ready} />
     </div>
   );

@@ -6,15 +6,17 @@ function OtherButton() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/login");
+    navigate("/");
   };
 
   return (
-    <div className="button-container">
-      <button type="button" className="custom-button" onClick={handleClick}>
-        Log Out
-      </button>
-    </div>
+    <button
+      type="button"
+      className="custom-button logout"
+      onClick={handleClick}
+    >
+      Log Out
+    </button>
   );
 }
 
