@@ -1,5 +1,5 @@
 # Debt-Management-App
-ShellHacks 2024 Project <br>
+Freedom Finances - 2024 ShellHacks Hackathon Project <br>
 <br>
 Deployment: <br>
 ```
