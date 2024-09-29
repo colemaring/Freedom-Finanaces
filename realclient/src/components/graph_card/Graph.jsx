@@ -11,11 +11,10 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
 // index.js or App.js
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Graph({ handleState }) {
+function Graph({ handleState, sum }) {
   ChartJS.register(
     LineElement,
     PointElement,
@@ -46,29 +45,57 @@ function Graph({ handleState }) {
     return labels; // return the x values from present to goal
   }
 
-  const labels = getMonthYearLabels(currentDate, endDate); // get x labels
-  const dataPoints = labels.map((label, index) => currentDebt - (monthlyPayoff) * index);
+  // get y values using equation y = debt - (monthly_payoff * quantity_of_months)
+  function getYValues(labels) {
+    const values = [];
+    for (let i = 1; i <= labels.length; i++) {
+      values.push(currentDebt - monthlyPayoff * i); // store the y value
+    }
 
+    return values; // return the y values
+  }
+
+  function getYValues2(labels) {
+    const values = [];
+    for (let i = 1; i <= labels.length; i++) {
+      values.push(currentDebt - (monthlyPayoff * i + sum * i));
+    }
+
+    return values; // return the y values
+  }
+
+  const labels = getMonthYearLabels(currentDate, endDate); // get x labels
+  const values = getYValues(labels); // get y values
+  const values2 = getYValues2(labels); // increased monthly payoff
+  console.log(values2);
   const data = {
-    // present month/year - end month/year
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels,
     datasets: [
       {
-        label: "Using Suggestion 1",
-        data: [200, 170, 140, 110, 100, 80, 0], // data points
-        fill: false, // Don't fill the area under the line
-        borderColor: "rgba(75, 192, 192, 1)", // Line color
-        tension: 0.1, // Line tension for smooth curves
+        label: "Debt Payoff Progress",
+        data: values,
+        fill: false,
+        borderColor: "rgba(93, 116, 241, 1)",
+        borderWidth: 4,
+        tension: 0.1,
+      },
+
+      {
+        label: "Debt Payoff Progress (Increased)",
+        data: values2,
+        fill: false,
+        borderColor: "rgba(54, 162, 235, 1)",
+        borderWidth: 4,
+        tension: 0.1,
       },
     ],
   };
 
-  // Chart options (optional)
   const options = {
-    responsive: true, // Make the chart responsive
+    responsive: true,
     plugins: {
       legend: {
-        position: "top", // Position of the legend
+        position: "top",
       },
     },
   };
@@ -102,8 +129,8 @@ function Graph({ handleState }) {
 
   return (
     <div className="card">
-      <h1>Debt Projection</h1>
-      <div>
+      <h2>Debt Projection</h2>
+      <div style={{ width: "100%", height: "100%" }}>
         <Line data={data} options={config} />
       </div>
     </div>

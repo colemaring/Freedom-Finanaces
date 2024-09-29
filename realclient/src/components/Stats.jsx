@@ -57,8 +57,7 @@ const Stats = ({ token }) => {
   }, []);
 
   const openai = new OpenAI({
-    apiKey:
-      "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",
+    apiKey: "key",
     dangerouslyAllowBrowser: true,
   });
 
@@ -160,23 +159,25 @@ const Stats = ({ token }) => {
         display: "flex",
         textAlign: "center",
         justifyContent: "space-between", // Optional: Adjusts spacing between items
-        marginRight: "20vw",
-        marginLeft: "20vw",
+        marginRight: "10vw",
+        marginLeft: "10vw",
       }}
     >
       <div>
         <h4>This Month's Spending</h4>
-        <p>${monthlyAvg}</p>
+        <p style={{ fontWeight: "600" }}>${monthlyAvg}</p>
       </div>
 
       <div>
         <h4>Loan Amount</h4>
-        <p>{totalDebt}</p>
+        <p style={{ fontWeight: "600" }}>
+          ${Number(totalDebt).toLocaleString()}
+        </p>
       </div>
 
       <div>
         <h4>Top Spending Category</h4>
-        <p>{topCategory}</p>
+        <p style={{ fontWeight: "600" }}>{topCategory}</p>
       </div>
     </div>
   );

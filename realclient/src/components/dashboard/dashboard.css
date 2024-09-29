@@ -1,21 +1,18 @@
-/* General Styles */
 body {
     font-family: 'Plus Jakarta Sans';
     margin: 0;
     padding: 0;
-    background-color: #000; /* Assuming a dark theme for better contrast */
     color: #FFFFFF;
 }
 
 .header {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: flex-start; /* Align items to the left */
-    gap: 1px; /* Adjust the gap to reduce space between elements */
-    padding: 20px; /* Optional padding around the header */
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 1px;
+    padding: 20px;
 }
 
-/* Rectangle 2 (Button) */
 .button-rectangle {
     position: absolute;
     width: 186px;
@@ -32,7 +29,6 @@ body {
     border: 1px solid #FFFFFF;
 }
 
-/* Content Container */
 .content-container {
     display: flex;
     flex-direction: row;
@@ -43,7 +39,6 @@ body {
     height: 356px;
 }
 
-/* Main CSS */
 #main {
     margin-top: 60px;
     padding: 20px 30px;
@@ -51,33 +46,42 @@ body {
 }
 
 .button-container {
-    display: flex;          
-    justify-content: flex-end; 
-    align-items: right; 
+    display: flex;           
+    align-items: left; 
     width: 32%; 
-    /* margin: 40;   */
     padding-bottom: 15px;
 }
 
 .content {
-    display: flex;         
-    justify-content: center; /* Center children horizontally */
-    align-items: center; /* Center children vertically if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(215, 233, 255, 0);
-    gap: 20px; /* Space between children */
-    flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
-    width: 100%; /* Ensures full width to accommodate centering */
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .dashboard-container {
     margin: 30px;
+    padding: 60px;
+    background-color: rgba(57, 75, 107, 0.589);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
     text-align: right;
     align-items: flex-start; 
-    display: flex; /* Make it a flex container */
-    justify-content: flex-end; /* Align items to the right */
-    align-items: right; /* Center items vertically */
-    margin-left: auto; /* Push logo to the right */
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    margin-left: auto;
+}
+.glass{
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255, 255, 255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37) ;
 }

@@ -56,8 +56,7 @@ const Test = ({ token }) => {
   }, [token]);
 
   const openai = new OpenAI({
-    apiKey:
-      "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",
+    apiKey: "key",
     dangerouslyAllowBrowser: true,
   });
 
@@ -85,9 +84,8 @@ ${JSON.stringify(transactionData)}`,
         ],
       });
 
-      console.log(response); // Log the entire response for debugging
+      console.log(response);
 
-      // Check if response has data and choices
       if (response && response.choices && response.choices.length > 0) {
         setChatResponse(response.choices[0].message.content);
       } else {
@@ -106,22 +104,6 @@ ${JSON.stringify(transactionData)}`,
 
   return (
     <div>
-      {/* <h1>Transactions Data:</h1>
-      {data
-        ? data.latest_transactions.map((transaction, index) => (
-            <div key={index}>
-              <p>Amount: {transaction.amount}</p>
-              <p>Categories: {transaction.category.join(", ")}</p>
-              <p>Date: {transaction.date}</p>
-              <p>
-                Name/Website:{" "}
-                {transaction.counterparties[0].name ||
-                  transaction.counterparties[0].website}
-              </p>
-              <hr />
-            </div>
-          ))
-        : "Loading..."} */}
       <h2 style={{ color: "white" }}>ChatGPT Response:</h2>
       <p style={{ color: "white" }}>{chatResponse}</p>
     </div>

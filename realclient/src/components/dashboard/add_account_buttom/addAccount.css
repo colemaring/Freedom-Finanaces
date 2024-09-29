@@ -14,7 +14,7 @@
 
   .add:hover {
     animation: bubble 0.4s ease-out;
-    background-color: #405bf3; /* Darkens the button on hover */
+    background-color: #405bf3;
     cursor: pointer; 
   }
   

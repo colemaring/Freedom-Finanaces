@@ -33,9 +33,7 @@ const SimplePlaidLink = ({ setToken, token }) => {
   });
 
   return (
-    // <button onClick={() => open()} disabled={!ready}>
-    //   Connect a bank account
-    // </button>
+
     <button
       onClick={() => open()}
       style={{

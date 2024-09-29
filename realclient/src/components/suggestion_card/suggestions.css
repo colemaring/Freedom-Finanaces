@@ -1,16 +1,15 @@
 .card {
-    /* Auto layout */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Keep content towards the top */
-    padding: 20px; /* Padding around the card to show the tan background */
+    justify-content: flex-start;
+    padding: 20px;
     gap: 10px;
 
     width: 591px;
     height: 529px;
 
-    background: #F4F4F4;
+    background: #f4f4f4;
     border-radius: 9px;
 
     box-sizing: border-box;
@@ -30,6 +29,7 @@
   .buttonStyle:hover {
     background-color: #efefef;
     color: #000000;
+    animation: bubble 0.4s ease-out;
   }
 
 .h1 {
@@ -49,17 +49,18 @@
     height: 100%; 
     padding: 8px;
     border-radius: 6.75px;
-    text-align: center; /* Center any text content inside */
+    text-align: center;
     box-sizing: border-box;
 
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: flex-start; /* Ensure content stays at the top */
-    gap: 8px; /* Spacing between text and details */
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
 }
 
 .details {
-    margin-top: auto; /* Pushes the .details div to the bottom */
-    text-align: left; /* Align the details content to the left */
-    width: 100%; /* Ensures it takes full width within content */
+    margin: auto 1;
+    text-align: left;
+    width: 100%;
 }
+

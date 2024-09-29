@@ -41,8 +41,7 @@ const Test = ({ token }) => {
   }, [token]);
 
   const openai = new OpenAI({
-    apiKey:
-      "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",
+    apiKey: "key",
     dangerouslyAllowBrowser: true,
   });
 

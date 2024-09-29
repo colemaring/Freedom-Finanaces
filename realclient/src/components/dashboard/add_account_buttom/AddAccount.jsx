@@ -14,7 +14,7 @@ function OtherButton() {
       <button
         style={{ marginLeft: "20rem" }}
         type="button"
-        className="add"
+        className="add hvr-sweep-to-right"
         onClick={handleClick}
       >
         Transactions
@@ -24,21 +24,3 @@ function OtherButton() {
 }
 
 export default OtherButton;
-///////////////////
-// export default AddAccount;
-
-// import React from "react";
-// import "./addAccount.css";
-
-// function AddAccount() {
-//   return (
-//     <div className="button-container">
-
-//       <button type="button" className="add" >
-//         Add Account
-//       </button>
-//     </div>
-//   );
-// }
-
-// export default AddAccount;

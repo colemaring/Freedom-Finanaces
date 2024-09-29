@@ -10,6 +10,7 @@ import Stats from "../Stats";
 
 function DashboardComponent({ token }) {
   const [name, setName] = useState("Cole");
+  const [sum, setSum] = useState(0);
   const storedData = JSON.parse(localStorage.getItem("surveyData"));
   const username = storedData.name;
   const endGoal = storedData.goal;
@@ -27,21 +28,44 @@ function DashboardComponent({ token }) {
           <div className="col-6">
             {" "}
             {/* Take more space for header */}
-            <div className="header">
-              <h1 className="title" style={{ color: "white", fontSize: 24 }}>
-                Welcome back, {username}
+            <div
+              className="header"
+              style={{ marginLeft: "-55px", marginTop: "-20px" }}
+            >
+              <h1
+                className="title"
+                style={{ color: "white", fontSize: 24, fontWeight: 500 }}
+              >
+                Welcome back,{" "}
+                <span style={{ color: "#5D74F1" }}>{username}</span>
               </h1>
 
-              <h2 className="dash" style={{ color: "white", fontSize: 48 }}>
+              <h2
+                className="dash"
+                style={{
+                  color: "white",
+                  fontSize: 56,
+                  fontWeight: "45S0",
+                  marginTop: "-9px",
+                }}
+              >
                 Dashboard
               </h2>
+              <div
+                className="button-container"
+                style={{
+                  position: "absolute",
+                  top: "20px",
+                  right: "20px",
+                  paddingRight: "60px",
+                  paddingTop: "50px",
 
-              <p
-                className="description"
-                style={{ color: "white", fontSize: 15 }}
+                  display: "flex",
+                }}
               >
-                Here is your financial summary...
-              </p>
+                <AddAccount />
+                <OtherButton />
+              </div>
             </div>
           </div>
           <div className="col-3 text-end">
@@ -57,27 +81,15 @@ function DashboardComponent({ token }) {
             </div> */}
           </div>
         </div>
-        <div
-          className="button-container"
-          style={{
-            position: "absolute",
-            top: "20px",
-            right: "20px",
-            display: "flex",
-          }}
-        >
-          <AddAccount />
-          <OtherButton />
-        </div>
       </div>
 
       <Stats />
 
       <div className="content">
         {/* TO DO: Pass through end goal and loan amount */}
-        <Suggestions handleState={handleState} />
+        <Suggestions sum={sum} setSum={setSum} handleState={handleState} />
         {/* TO DO: Pass through end goal */}
-        <Graph handleState={handleState} />
+        <Graph sum={sum} handleState={handleState} />
       </div>
     </div>
   );

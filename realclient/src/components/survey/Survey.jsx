@@ -16,7 +16,6 @@ const Survey = ({ openBankLink, isBankLinkReady }) => {
 
   const questions = [
     { question: "Hi there! What is your name?", name: "name" },
-    { question: "What is your employment status?", name: "emplyoment" },
     { question: "How much debt do you currently have?", name: "current_debt" },
     {
       question: "How much do you pay off your debt monthly?",
@@ -55,33 +54,40 @@ const Survey = ({ openBankLink, isBankLinkReady }) => {
   };
 
   return (
-    <div className="quiz-container">
-      <div className="question-box">
-        <h2 className="question">{questions[currentQuestionIndex].question}</h2>
-        <input
-          className="input-admin"
-          type={
-            questions[currentQuestionIndex].name === "goal_date"
-              ? "date"
-              : "text"
-          }
-          placeholder={
-            questions[currentQuestionIndex].name === "goal_date"
-              ? ""
-              : "Type here..."
-          }
-          name={questions[currentQuestionIndex].name}
-          value={inputValue}
-          onChange={handleChange}
-        />
+    <>
+      <div className="st">
+        <h1>Almost there... Just a few questions!</h1>
       </div>
+      <div className="quiz-container">
+        <div className="question-box">
+          <h2 className="question">
+            {questions[currentQuestionIndex].question}
+          </h2>
+          <input
+            className="input-admin"
+            type={
+              questions[currentQuestionIndex].name === "goal_date"
+                ? "date"
+                : "text"
+            }
+            placeholder={
+              questions[currentQuestionIndex].name === "goal_date"
+                ? ""
+                : "Type here..."
+            }
+            name={questions[currentQuestionIndex].name}
+            value={inputValue}
+            onChange={handleChange}
+          />
+        </div>
 
-      <button className="next-button" onClick={handleNext}>
-        {currentQuestionIndex < questions.length - 1
-          ? "Continue"
-          : "Connect to Bank"}
-      </button>
-    </div>
+        <button className="next-button" onClick={handleNext}>
+          {currentQuestionIndex < questions.length - 1
+            ? "Continue"
+            : "Connect to Bank"}
+        </button>
+      </div>
+    </>
   );
 };
 
