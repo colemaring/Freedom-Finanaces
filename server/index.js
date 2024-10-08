@@ -1,4 +1,5 @@
 'use strict';
+const OpenAI = require('openai');
 
 // read env vars from .env file
 require('dotenv').config();
@@ -605,6 +606,109 @@ const formatError = (error) => {
     error: { ...error.data, status_code: error.status },
   };
 };
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_KEY,
+});
+
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { transactionData } = req.body;
+
+    const response = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        {
+          role: 'system',
+          content: 'You are a helpful assistant.',
+        },
+        {
+          role: 'user',
+          content: `given the transactions list, respond with ONLY ONE suggestion baseed on these strict criteria.
+1. Use the avalanche method to pay off high interest loans first
+2. Give a recommendation to cut down on one of the spending categories, and how much to cut down by. be reasonable with your suggestions. your responses should be in the same order as the cirteria.
+3. Increase the amount you are paying of the loan/debt by
+
+format the responses as 1., 2. , 3.. Do not include any other text other then the 3 bullet points. Each bullet point should be two sentences, STRICT WORD COUNT OF 20.
+
+Transactions: ${JSON.stringify(transactionData)}`,
+        },
+      ],
+    });
+
+    if (response && response.choices && response.choices.length > 0) {
+      res.json(response);
+    } else {
+      console.error('Unexpected response structure:', response);
+      res.status(500).json({ error: 'Unexpected response structure' });
+    }
+  } catch (error) {
+    console.error('Error calling OpenAI API:', error);
+    res.status(500).json({ error: 'Error calling OpenAI API' });
+  }
+});
+
+app.post('/api/chat2', async (req, res) => {
+  try {
+    const { storedData, suggestion1 } = req.body;
+
+    const response = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        {
+          role: 'system',
+          content: 'You are a helpful assistant.',
+        },
+        {
+          role: 'user',
+          content:
+            "Based on the following suggestion, return a number that represents the amount per month you would be saving if you followed the suggestion's advice. The number should fit a realistic person's timeline for paying back a loan with the following amount of debt: ${storedData.current_debt}. Here is the suggestion to follow: ${suggestion1}. ONLY RETURN A SINGLE NUMBER, AND NOTHING ELSE. NO DOLLAR SIGN OR PERIOD",
+        },
+      ],
+    });
+
+    if (response && response.choices && response.choices.length > 0) {
+      res.json(response);
+    } else {
+      console.error('Unexpected response structure:', response);
+      res.status(500).json({ error: 'Unexpected response structure' });
+    }
+  } catch (error) {
+    console.error('Error calling OpenAI API:', error);
+    res.status(500).json({ error: 'Error calling OpenAI API' });
+  }
+});
+
+app.post('/api/chat3', async (req, res) => {
+  try {
+    const { transactionData } = req.body;
+
+    const response = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        {
+          role: 'system',
+          content: 'You are a helpful assistant.',
+        },
+        {
+          role: 'user',
+          content: `Given the transactions data, Calculate the top spending category. Only respond with the category. The response should be one word.
+    ${JSON.stringify(transactionData)}`,
+        },
+      ],
+    });
+
+    if (response && response.choices && response.choices.length > 0) {
+      res.json(response);
+    } else {
+      console.error('Unexpected response structure:', response);
+      res.status(500).json({ error: 'Unexpected response structure' });
+    }
+  } catch (error) {
+    console.error('Error calling OpenAI API:', error);
+    res.status(500).json({ error: 'Error calling OpenAI API' });
+  }
+});
 
 app.get('/api/transfer_authorize', function (request, response, next) {
   Promise.resolve()
