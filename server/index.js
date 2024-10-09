@@ -604,9 +604,9 @@ app.get(
   },
 );
 
-const server = app.listen(APP_PORT, function () {
-  console.log('plaid-quickstart server listening on port ' + APP_PORT);
-});
+// const server = app.listen(APP_PORT, function () {
+//   console.log('plaid-quickstart server listening on port ' + APP_PORT);
+// });
 
 const prettyPrintResponse = (response) => {
   console.log(util.inspect(response.data, { colors: true, depth: 4 }));
