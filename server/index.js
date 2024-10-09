@@ -16,6 +16,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const moment = require('moment');
 const cors = require('cors');
+const https = require('https');
+const http = require('http');
+const fs = require('fs');
 
 const APP_PORT = process.env.APP_PORT || 8000;
 const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
@@ -83,7 +86,35 @@ const configuration = new Configuration({
 
 const client = new PlaidApi(configuration);
 
+const options = {
+  key: fs.readFileSync('/etc/letsencrypt/live/freedomfinances.xyz/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/freedomfinances.xyz/fullchain.pem'),
+};
+
 const app = express();
+
+const httpsServer = https.createServer(options, app);
+
+// Create an HTTP server to redirect to HTTPS
+const httpServer = http.createServer((req, res) => {
+  res.writeHead(301, { 'Location': `https://${req.headers.host}${req.url}` });
+  res.end();
+});
+
+app.use(express.static('dist'));
+
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/dist/index.html');
+});
+
+httpsServer.listen(443, () => {
+  console.log('Server started on port 443');
+});
+
+httpServer.listen(80, () => {
+  console.log('HTTP redirect server started on port 80');
+});
+
 app.use(
   bodyParser.urlencoded({
     extended: false,
