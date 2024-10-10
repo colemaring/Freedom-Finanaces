@@ -12,7 +12,7 @@ const Stats = ({ token }) => {
   const getData = async () => {
     // Fetch transactions data
     const transactionsResponse = await fetch(
-      `http://localhost:8000/api/transactions`,
+      `https://freedomfinances.xyz/api/transactions`,
       {
         method: "GET",
       }
@@ -28,7 +28,7 @@ const Stats = ({ token }) => {
 
     // Fetch liabilities data
     const liabilitiesResponse = await fetch(
-      `http://localhost:8000/api/liabilities`,
+      `https://freedomfinances.xyz/api/liabilities`,
       {
         method: "GET",
       }
@@ -78,7 +78,7 @@ const Stats = ({ token }) => {
 
   const chatWithGPT32 = async (transactionData) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/chat3`, {
+      const response = await fetch(`https://freedomfinances.xyz/api/chat3`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

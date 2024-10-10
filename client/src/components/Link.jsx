@@ -13,7 +13,7 @@ const SimplePlaidLink = ({ setToken, token }) => {
       );
     const createLinkToken = async () => {
       const response = await fetch(
-        "http://localhost:8000/api/create_link_token",
+        "https://freedomfinances.xyz/api/create_link_token",
         {
           method: "POST",
         }

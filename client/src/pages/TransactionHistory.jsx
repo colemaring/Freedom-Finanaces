@@ -8,11 +8,10 @@ function TransactionHistory() {
   const navigate = useNavigate();
 
   const getData = async () => {
-
     try {
       // Fetch transactions data
       const transactionsResponse = await fetch(
-        `http://localhost:8000/api/transactions`,
+        `https://freedomfinances.xyz/api/transactions`,
         {
           method: "GET",
         }

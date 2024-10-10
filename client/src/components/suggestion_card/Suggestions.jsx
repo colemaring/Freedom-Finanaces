@@ -23,7 +23,7 @@ const Suggestions = ({ handleState, setSum, sum }) => {
   const getData = async () => {
     // Fetch transactions data
     const transactionsResponse = await fetch(
-      `http://localhost:8000/api/transactions`,
+      `https://freedomfinances.xyz/api/transactions`,
       {
         method: "GET",
       }
@@ -44,7 +44,7 @@ const Suggestions = ({ handleState, setSum, sum }) => {
 
   const chatWithGPT3 = async (transactionData) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/chat`, {
+      const response = await fetch(`https://freedomfinances.xyz/api/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const Suggestions = ({ handleState, setSum, sum }) => {
   const getArbVal1 = async (suggestion1) => {
     try {
       const storedData = JSON.parse(localStorage.getItem("surveyData"));
-      const response = await fetch(`http://localhost:8000/api/chat2`, {
+      const response = await fetch(`https://freedomfinances.xyz/api/chat2`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

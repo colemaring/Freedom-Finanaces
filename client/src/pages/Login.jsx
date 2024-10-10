@@ -15,7 +15,7 @@ const Login = ({ setToken, token, setName, setDate, date, name }) => {
     console.log("SimplePlaidLink component mounted");
     const createLinkToken = async () => {
       const response = await fetch(
-        "http://localhost:8000/api/create_link_token",
+        "https://freedomfinances.xyz/api/create_link_token",
         {
           method: "POST",
         }
@@ -31,7 +31,7 @@ const Login = ({ setToken, token, setName, setDate, date, name }) => {
       // If the access_token is needed, send public_token to server
       const exchangePublicTokenForAccessToken = async () => {
         const response = await fetch(
-          "http://localhost:8000/api/set_access_token",
+          "https://freedomfinances.xyz/api/set_access_token",
           {
             method: "POST",
             headers: {
