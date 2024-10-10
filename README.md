@@ -1,16 +1,24 @@
 # Freedom Finances
 2024 ShellHacks Hackathon Project <br>
 <br>
-Deployment: <br>
+Development: <br>
 ```
 git clone https://github.com/colemaring/Freedom-Finanaces.git <br>
 cd Freedom-Finanaces/realclient && npm i && npm run dev <br>
 cd Freedom-Finanaces/server && npm i && npm start <br>
 ```
-Environment Variables: <br>
+Environment Variables (see .env_template): <br>
 Plaid client_id <br>
 Plaid sandbox_id <br>
 OpenAI API key <br>
+<br>
+Deployment:<br>
+```
+git clone https://github.com/colemaring/Freedom-Finanaces.git <br>
+cd Freedom-Finanaces/server && npm i && touch .env <br>
+nano .env       -> (enter keys) <br>
+pm2 start index.js OR npm start
+```
 <br>
 Demo Video: <br>
 https://www.youtube.com/watch?v=0kxlwAFJ_RA <br>
