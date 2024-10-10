@@ -3,9 +3,9 @@
 <br>
 Development: <br>
 ```
-git clone https://github.com/colemaring/Freedom-Finanaces.git <br>
-cd Freedom-Finanaces/realclient && npm i && npm run dev <br>
-cd Freedom-Finanaces/server && npm i && npm start <br>
+git clone https://github.com/colemaring/Freedom-Finanaces.git 
+cd Freedom-Finanaces/realclient && npm i && npm run dev 
+cd Freedom-Finanaces/server && npm i && npm start 
 ```
 Environment Variables (see .env_template): <br>
 Plaid client_id <br>
@@ -14,9 +14,9 @@ OpenAI API key <br>
 <br>
 Deployment:<br>
 ```
-git clone https://github.com/colemaring/Freedom-Finanaces.git <br>
-cd Freedom-Finanaces/server && npm i && touch .env <br>
-nano .env       -> (enter keys) <br>
+git clone https://github.com/colemaring/Freedom-Finanaces.git 
+cd Freedom-Finanaces/server && npm i && touch .env 
+nano .env       -> (enter keys) 
 pm2 start index.js OR npm start
 ```
 <br>
