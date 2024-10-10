@@ -88,7 +88,9 @@ const client = new PlaidApi(configuration);
 
 const options = {
   key: fs.readFileSync('/etc/letsencrypt/live/freedomfinances.xyz/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/freedomfinances.xyz/fullchain.pem'),
+  cert: fs.readFileSync(
+    '/etc/letsencrypt/live/freedomfinances.xyz/fullchain.pem',
+  ),
 };
 
 const app = express();
@@ -97,12 +99,15 @@ const httpsServer = https.createServer(options, app);
 
 // Create an HTTP server to redirect to HTTPS
 const httpServer = http.createServer((req, res) => {
-  res.writeHead(301, { 'Location': `https://${req.headers.host}${req.url}` });
+  res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
   res.end();
 });
 
 app.use(express.static('dist'));
 
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/dist/index.html');
+});
 
 httpsServer.listen(443, () => {
   console.log('Server started on port 443');
@@ -928,8 +933,3 @@ app.use('/api', function (error, request, response, next) {
   prettyPrintResponse(error.response);
   response.json(formatError(error.response));
 });
-
-app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/dist/index.html');
-});
-
