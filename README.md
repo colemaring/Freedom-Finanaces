@@ -1,6 +1,6 @@
 # Freedom Finances
 2024 ShellHacks Hackathon Project <br>
-<br>
+Website: https://freedomfinances.xyz/ <br>
 Demo Video: <br>
 https://www.youtube.com/watch?v=0kxlwAFJ_RA <br>
 <br>
