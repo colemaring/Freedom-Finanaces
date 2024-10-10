@@ -105,10 +105,6 @@ const httpServer = http.createServer((req, res) => {
 
 app.use(express.static('dist'));
 
-app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/dist/index.html');
-});
-
 httpsServer.listen(443, () => {
   console.log('Server started on port 443');
 });
@@ -932,4 +928,9 @@ app.use('/api', function (error, request, response, next) {
   console.log(error);
   prettyPrintResponse(error.response);
   response.json(formatError(error.response));
+});
+
+
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/dist/index.html');
 });
